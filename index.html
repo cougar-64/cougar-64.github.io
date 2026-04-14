@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samuel Bird | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 80px 20px 40px;
+      text-align: center;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      border-left: 4px solid #38bdf8;
+      padding-left: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: #243044;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #334155;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin: 4px 4px 0 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #64748b;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1> Hi! I'm Samuel</h1>
+    <p>
+      Computer Science student focused on software engineering, AI/ML, and building practical systems that solve real-world problems.
+    </p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <div class="card">
+      <ul>
+        <li>CS major with an interest in software engineering and AI/ML</li>
+        <li>Experienced with Python, Java, and backend development</li>
+        <li>Built the world’s largest ASL dataset (3× larger than existing benchmarks), leading a 15-person team</li>
+        <li>Preprocessing and packaging large-scale datasets into .tar pipelines for ML training</li>
+        <li>Interested in algorithms, optimization, and data-driven systems</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tech Stack</h2>
+    <div class="card">
+      <div>
+        <span class="tag">Python</span>
+        <span class="tag">Java</span>
+        <span class="tag">C++</span>
+        <span class="tag">SQL</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Git</span>
+        <span class="tag">Linux</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Featured Projects</h2>
+    <div class="grid">
+
+      <div class="card">
+        <h3>AI Chatbot for HVAC Systems</h3>
+        <p>Python Flask backend with OpenAI integration for domain-specific HVAC support.</p>
+      </div>
+
+      <div class="card">
+        <h3>Chess Engine</h3>
+        <p>Fully functional chess engine with legal move generation, game state tracking, and engine-driven simulations.</p>
+      </div>
+
+      <div class="card">
+        <h3>Pantry Planner (In Progress)</h3>
+        <p>AI-powered grocery optimization app with receipts, meal planning, and price comparison.</p>
+      </div>
+
+      <div class="card">
+        <h3>Algorithms Collection</h3>
+        <p>Dijkstra’s algorithm, TSP branch & bound, dynamic programming, and graph analysis tools.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>What I'm Working On</h2>
+    <div class="card">
+      <ul>
+        <li>Improving system design and scalable backend architecture</li>
+        <li>Expanding AI integration in real-world applications</li>
+        <li>Strengthening advanced algorithm knowledge</li>
+        <li>Building full-stack portfolio projects</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="card">
+      <p>GitHub: <a href="#">github.com/cougar-64</a></p>
+      <p>Email: your-email@example.com</p>
+      <p>LinkedIn: add-link-here</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built with HTML & CSS • Samuel Bird</p>
+  </footer>
+
+</body>
+</html>
