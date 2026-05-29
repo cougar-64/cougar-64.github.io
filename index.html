@@ -1,73 +1,127 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" href="/favicon.png" type="image/png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samuel Bird | Portfolio</title>
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    :root {
+      --bg: #0f1117;
+      --bg-secondary: #161b22;
+      --card: #1c212b;
+      --card-hover: #242b36;
+
+      --text: #e6edf3;
+      --text-secondary: #9da7b3;
+
+      --accent: #58a6ff;
+      --accent-secondary: #7c72ff;
+
+      --border: rgba(255,255,255,0.06);
+      --shadow: rgba(0,0,0,0.35);
     }
 
     body {
-      background: #111315;
-      color: #e2e8f0;
+      background:
+        radial-gradient(circle at top left, rgba(88,166,255,0.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(124,114,255,0.08), transparent 30%),
+        var(--bg);
+
+      color: var(--text);
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+
       line-height: 1.75;
+      min-height: 100vh;
     }
 
     header {
-      padding: 80px 20px 40px;
+      padding: 110px 20px 70px;
       text-align: center;
-      background: linear-gradient(135deg, #1c1f24, #111315);
     }
 
     header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
+      font-size: 3.4rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
     }
 
     header p {
-      color: #94a3b8;
-      font-size: 1.1rem;
       max-width: 700px;
-      margin: 0 auto;
+      margin: auto;
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+    }
+
+    .accent {
+      background: linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent-secondary)
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     section {
-      max-width: 1000px;
+      max-width: 950px;
       margin: auto;
-      padding: 50px 20px;
+      padding: 32px 20px;
     }
 
     h2 {
-      font-size: 1.6rem;
-      margin-bottom: 20px;
-      border-left: 4px solid #38bdf8;
-      padding-left: 10px;
+      font-size: 1.5rem;
+      margin-bottom: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .card {
+      background: rgba(28, 33, 43, 0.75);
+
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      border: 1px solid var(--border);
+
+      border-radius: 20px;
+
+      padding: 24px;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+
+      box-shadow:
+        0 10px 30px var(--shadow);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      background: var(--card-hover);
+      border-color: rgba(88,166,255,0.25);
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #1b1d21;
-      padding: 20px;
-      border-radius: 12px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      background: #25282e;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
     }
 
     ul {
@@ -75,65 +129,134 @@
     }
 
     li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .tag {
-      display: inline-block;
-      background: #334155;
-      padding: 4px 10px;
+      padding: 7px 14px;
       border-radius: 999px;
-      font-size: 0.8rem;
-      margin: 4px 4px 0 0;
+
+      background: rgba(88,166,255,0.12);
+
+      border: 1px solid rgba(88,166,255,0.2);
+
+      color: #c9e3ff;
+
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .project p {
+      color: var(--text-secondary);
+      font-size: 0.97rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    a:hover {
+      opacity: 0.8;
     }
 
     footer {
       text-align: center;
-      padding: 40px 20px;
-      color: #64748b;
+      padding: 60px 20px 40px;
+      color: #7d8590;
+      font-size: 0.92rem;
     }
 
-    a {
-      color: #8b5cf6;
-      text-decoration: none;
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: var(--border);
+      margin-top: 20px;
     }
 
-    a:hover {
-      text-decoration: underline;
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      header {
+        padding-top: 80px;
+      }
+
+      section {
+        padding: 26px 18px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <h1> Hi! I'm Samuel</h1>
+    <h1>
+      Hi, I'm <span class="accent">Samuel</span>
+    </h1>
+
     <p>
-      Computer Science student focused on software engineering, AI/ML, and building practical systems that solve real-world problems.
+      Computer Science student focused on software engineering,
+      AI/ML, backend systems, and building practical tools that solve real-world problems.
     </p>
   </header>
 
   <section>
     <h2>About Me</h2>
+
     <div class="card">
       <ul>
-        <li>CS major with an interest in software engineering and AI/ML</li>
-        <li>Experienced with Python, Java, and backend development</li>
-        <li>Built the world’s largest ASL dataset (3× larger than existing benchmarks), leading a 15-person team</li>
-        <li>Preprocessing and packaging large-scale datasets into .tar pipelines for ML training</li>
-        <li>Interested in algorithms, optimization, and data-driven systems</li>
+        <li>
+          CS major with interests in software engineering, AI/ML, and scalable systems
+        </li>
+
+        <li>
+          Experienced with Python, Java, backend development, and database integration
+        </li>
+
+        <li>
+          Built the world’s largest ASL dataset (3× larger than existing benchmarks)
+          while leading a 15-person team
+        </li>
+
+        <li>
+          Experienced preprocessing and packaging large-scale datasets into efficient ML pipelines
+        </li>
+
+        <li>
+          Interested in algorithms, optimization, distributed systems, and applied AI
+        </li>
       </ul>
     </div>
   </section>
 
   <section>
     <h2>Tech Stack</h2>
+
     <div class="card">
-      <div>
+      <div class="tag-container">
         <span class="tag">Python</span>
         <span class="tag">Java</span>
         <span class="tag">C++</span>
         <span class="tag">SQL</span>
         <span class="tag">JavaScript</span>
+        <span class="tag">Flask</span>
         <span class="tag">Git</span>
         <span class="tag">Linux</span>
       </div>
@@ -142,60 +265,102 @@
 
   <section>
     <h2>Featured Projects</h2>
+
     <div class="grid">
 
-      <div class="card">
+      <div class="card project">
         <h3>Chess Engine</h3>
-        <p>Fully functional chess engine with legal move generation, game state tracking, engine-driven simulations, and SQL-based persistent storage, demonstrating software design, networking, and database integration.</p>
+
+        <p>
+          Chess engine with legal move generation, game state tracking,
+          engine-driven simulations, and SQL-based persistent storage,
+          demonstrating software design, networking, and database integration.
+        </p>
       </div>
 
-      <div class="card">
-        <h3>MyStudent — Smart Study Scheduler (In Progress)</h3>
-        <p>Web app that generates day-by-day study plans by distributing assignments based on due dates and estimated effort, featuring a custom scheduling algorithm, LLM-assisted development, and full-stack implementation with TypeScript and React.</p>
+      <div class="card project">
+        <h3>AI HVAC Support Chatbot</h3>
+
+        <p>
+          AI-assisted HVAC support chatbot built with Python, Flask,
+          OpenAI APIs, and domain-specific prompt engineering.
+        </p>
       </div>
 
-      <div class="card">
-        <h3>AI Chatbot for HVAC Systems</h3>
-        <p>AI-assisted (agentic) development using LLMs with a Python Flask backend and OpenAI integration for domain-specific HVAC support.</p>
+      <div class="card project">
+        <h3>Pantry Planner</h3>
+
+        <p>
+          AI-powered grocery optimization platform featuring receipt parsing,
+          meal planning, pantry tracking, and store price comparison.
+        </p>
       </div>
 
-      <div class="card">
-        <h3>Pantry Planner (In Progress)</h3>
-        <p>AI-powered grocery optimization app with receipts, meal planning, and price comparison.</p>
-      </div>
-
-      <div class="card">
+      <div class="card project">
         <h3>Algorithms Collection</h3>
-        <p>Dijkstra’s algorithm, TSP branch & bound, dynamic programming, and graph analysis tools.</p>
+
+        <p>
+          Collection of advanced algorithm implementations including
+          Dijkstra’s algorithm, TSP branch & bound,
+          graph analysis, and dynamic programming solutions.
+        </p>
       </div>
 
     </div>
   </section>
 
   <section>
-    <h2>What I'm Working On</h2>
+    <h2>Currently Working On</h2>
+
     <div class="card">
       <ul>
-        <li>Improving system design and scalable backend architecture</li>
-        <li>Expanding AI integration in real-world applications</li>
-        <li>Strengthening advanced algorithm knowledge</li>
-        <li>Building full-stack portfolio projects</li>
+        <li>Improving scalable backend architecture and system design skills</li>
+        <li>Expanding AI integration in practical applications</li>
+        <li>Building stronger full-stack engineering experience</li>
+        <li>Transforming ideas to fully functionable applications</li>
       </ul>
     </div>
   </section>
 
   <section>
     <h2>Contact</h2>
+
     <div class="card">
-      <p>GitHub: <a href="https://github.com/cougar-64">github.com/cougar-64</a></p>
-      <p>Email: <a href="mailto:samuelbird01@gmail.com">samuelbird01@gmail.com</a></p>
-      <p>Find my LinkedIn <a href="https://www.linkedin.com/in/samuel-bird-764499bb/">here</a></p>
+      <p>
+        GitHub:
+        <a href="https://github.com/cougar-64" target="_blank">
+          github.com/cougar-64
+        </a>
+      </p>
+
+      <br>
+
+      <p>
+        Email:
+        <a href="mailto:your-email@example.com?subject=Portfolio%20Inquiry">
+          your-email@example.com
+        </a>
+      </p>
+
+      <br>
+
+      <p>
+        LinkedIn:
+        <a href="#">
+          add-link-here
+        </a>
+      </p>
     </div>
   </section>
 
   <footer>
-    <p>Built with HTML & CSS • Samuel Bird</p>
+    <div class="divider"></div>
+
+    <p style="margin-top: 24px;">
+      Built with HTML & CSS • Samuel Bird
+    </p>
   </footer>
 
 </body>
 </html>
+```
